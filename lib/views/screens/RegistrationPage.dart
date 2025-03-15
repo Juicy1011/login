@@ -36,23 +36,35 @@ class RegistrationPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               myTextField(
-                  hintText: "Enter username",
-                  controller: userNameController,
-                  fillColor: Colors.white),
+                hintText: "Enter username",
+                controller: userNameController,
+                fillColor: Colors.white,
+                textColor: Colors.white,
+                hintTextColor: Colors.white,
+              ),
               SizedBox(height: 20),
               myTextField(
                 hintText: "Enter email",
                 controller: emailController,
+                fillColor: Colors.white,
+                textColor: Colors.white,
+                hintTextColor: Colors.white,
               ),
               SizedBox(height: 20),
               myTextField(
                 hintText: "Enter password",
                 controller: passwordController,
+                fillColor: Colors.white,
+                textColor: Colors.white,
+                hintTextColor: Colors.white,
               ),
               SizedBox(height: 20),
               myTextField(
                 hintText: "Confirm password",
                 controller: confirmPasswordController,
+                fillColor: Colors.white,
+                textColor: Colors.white,
+                hintTextColor: Colors.white,
               ),
               SizedBox(height: 30),
               myButton(() {
@@ -63,7 +75,8 @@ class RegistrationPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account? "),
+                  Text("Already have an account? ",
+                      style: TextStyle(color: Colors.white)),
                   GestureDetector(
                     child: Text(
                       "Login",

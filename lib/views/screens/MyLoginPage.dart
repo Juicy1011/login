@@ -17,7 +17,7 @@ class MyWidget extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage("images/background1.jpg"),
+            image: AssetImage("images/background3.jpg"),
             fit: BoxFit.cover,
           )),
           child: Padding(
@@ -31,15 +31,28 @@ class MyWidget extends StatelessWidget {
                 ),
                 Text(
                   'Login',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 myTextField(
-                    hintText: "Enter username", controller: userNameController),
+                  hintText: "Enter username",
+                  controller: userNameController,
+                  fillColor: Colors.white,
+                  textColor: Colors.white,
+                  hintTextColor: Colors.white,
+                ),
                 SizedBox(
                   height: 20,
                 ),
                 myTextField(
-                    hintText: "Enter password", controller: passwordController),
+                  hintText: "Enter password",
+                  controller: passwordController,
+                  fillColor: Colors.white,
+                  textColor: Colors.white,
+                  hintTextColor: Colors.white,
+                ),
                 SizedBox(height: 30),
                 myButton(() {
                   print("Login");
