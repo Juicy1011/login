@@ -18,7 +18,7 @@ class RegistrationPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage("images/background2.jpg"),
+          image: AssetImage("assets/images/background4.jpg"),
           fit: BoxFit.cover,
         )),
         child: Padding(
@@ -27,12 +27,15 @@ class RegistrationPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                "images/logo1.png",
+                "assets/images/logo1.png",
                 height: 100,
               ),
               Text(
                 'Sign Up',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               SizedBox(height: 20),
               myTextField(

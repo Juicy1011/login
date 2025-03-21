@@ -1,8 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:login/configs/mycolors.dart';
+import 'package:login/controllers/DisplayController.dart';
 import 'package:login/views/widgets/mybutton.dart';
 import 'package:login/views/widgets/textfield.dart';
 import 'package:login/views/screens/RegistrationPage.dart';
+import 'package:get/get.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -11,13 +15,14 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController userNameController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    DisplayController displayController = DisplayController();
 
     return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage("images/background3.jpg"),
+            image: AssetImage("assets/images/background3.jpg"),
             fit: BoxFit.cover,
           )),
           child: Padding(
@@ -26,7 +31,7 @@ class MyWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "images/logo1.png",
+                  "assets/images/logo1.png",
                   height: 100,
                 ),
                 Text(
@@ -55,7 +60,7 @@ class MyWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 myButton(() {
-                  print("Login");
+                  displayController.setErrorMessage("You are logged in");
                 }, label: "Login", color: SecondaryColor),
                 SizedBox(height: 30),
                 myButton(() {
@@ -79,7 +84,15 @@ class MyWidget extends StatelessWidget {
                           print("password recovered");
                         }),
                   ],
-                )
+                ),
+                Obx(() => Text(
+                      displayController
+                          .errorMessage.value, // Access the value property
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ))
               ],
             ),
           ),
